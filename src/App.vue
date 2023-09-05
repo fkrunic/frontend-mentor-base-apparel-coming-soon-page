@@ -8,49 +8,87 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="flex items-center justify-center min-h-screen">
+  <div class="flex flex-col items-center justify-start min-h-screen">
 
     <!-- Page Layout -->
     <div class="flex flex-col items-center">
 
       <!-- Banner-->
-      <div class="flex flex-row justify-start">
+      <div class="flex flex-row justify-start items-center w-full p-8">
 
         <!-- Name and Logo -->
-        <div class="flex flex-row">
+        <div class="flex flex-row gap-2">
 
           <!-- Logo -->
-          <div></div>
+          <div class="w-5 h-5 border-2 border-solid border-soft-red rounded-full"></div>
 
           <!-- Brand Name -->
           <div class="flex flex-col">
-            <p>BASE</p>
-            <p>APPAREL</p>
+            <p class="w-10 text-[11px] font-black tracking-[3px] leading-3">
+              BASE APPAREL
+            </p>
           </div>
         </div>
       </div>  
 
-      <img src="./assets/hero-mobile.jpg" alt="woman">
+      <img class="w-full" src="./assets/hero-mobile.jpg" alt="woman">
 
       <!-- Bottom Card -->
-      <div class="flex flex-col">
+      <div class="flex flex-col gap-4 p-8">
 
         <!-- Coming Soon -->
-        <div class="flex flex-col items-center">
-          <p>WE'RE</p>
-          <p>COMING</p>
-          <p>SOON</p>
+        <div class="flex flex-col justify-center items-center">
+          <p class="p-2 w-full text-4xl text-center tracking-[10px] font-bold">
+            <span class="font-light tracking-[10px]">WE'RE</span> 
+            COMING SOON
+          </p>
         </div>
 
-        <p>
+        <p class="px-4 pb-6 text-sm text-center">
           Hello fellow shoppers! We're currently building 
           our new fashion store. Add your email below to stay
           up-to-date with announcements and our launch deals.
         </p>
 
         <!-- Email Button -->
-        <div class="flex flex-row">
-          <input class="outline-none" type="text" placeholder="Email Address">
+        <div class="relative flex flex-row">
+          <input 
+            class="
+              w-full
+              p-3
+              px-7
+
+              text-sm
+              outline-none
+              
+              border-2
+              border-solid
+              
+              rounded-full
+              
+            " 
+            type="text" 
+            placeholder="Email Address">
+
+          <!-- Submit Icon -->
+          <div class="
+            absolute 
+
+            flex
+            flex-row
+            items-center
+            justify-center
+
+            w-16
+            h-12
+
+            -right-0
+            
+            bg-soft-red
+            rounded-full            
+            ">
+            <img src="./assets/icon-arrow.svg">
+          </div>
         </div>
       </div>
     </div>
