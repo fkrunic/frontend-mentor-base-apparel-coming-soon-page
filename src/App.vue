@@ -37,8 +37,8 @@ onMounted(() => {
       <div class="flex flex-col gap-3 p-8">
 
         <!-- Coming Soon -->
-        <div class="flex flex-col justify-center items-center">
-          <p class="p-2 w-full text-4xl text-center tracking-[10px] font-bold text-dark-grayish-red">
+        <div class="flex flex-col justify-center items-center pt-2">
+          <p class="p-2 w-full text-[40px] text-center tracking-[10px] font-semibold text-dark-grayish-red leading-10">
             <span class="font-light tracking-[10px] text-desaturated-red">
               WE'RE
             </span> 
