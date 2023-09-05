@@ -20,11 +20,11 @@ onMounted(() => {
         <div class="flex flex-row gap-2">
 
           <!-- Logo -->
-          <div class="w-5 h-5 border-2 border-solid border-soft-red rounded-full"></div>
+          <div class="w-5 h-5 border-2 border-solid border-desaturated-red rounded-full"></div>
 
           <!-- Brand Name -->
           <div class="flex flex-col">
-            <p class="w-10 text-[11px] font-black tracking-[3px] leading-3">
+            <p class="w-10 text-[11px] font-bold tracking-[3px] leading-3 text-dark-grayish-red">
               BASE APPAREL
             </p>
           </div>
@@ -34,17 +34,19 @@ onMounted(() => {
       <img class="w-full" src="./assets/hero-mobile.jpg" alt="woman">
 
       <!-- Bottom Card -->
-      <div class="flex flex-col gap-4 p-8">
+      <div class="flex flex-col gap-3 p-8">
 
         <!-- Coming Soon -->
         <div class="flex flex-col justify-center items-center">
-          <p class="p-2 w-full text-4xl text-center tracking-[10px] font-bold">
-            <span class="font-light tracking-[10px]">WE'RE</span> 
+          <p class="p-2 w-full text-4xl text-center tracking-[10px] font-bold text-dark-grayish-red">
+            <span class="font-light tracking-[10px] text-desaturated-red">
+              WE'RE
+            </span> 
             COMING SOON
           </p>
         </div>
 
-        <p class="px-4 pb-6 text-sm text-center">
+        <p class="px-4 pb-6 text-sm text-center text-desaturated-red">
           Hello fellow shoppers! We're currently building 
           our new fashion store. Add your email below to stay
           up-to-date with announcements and our launch deals.
