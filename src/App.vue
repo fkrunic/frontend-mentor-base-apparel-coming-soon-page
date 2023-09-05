@@ -3,7 +3,7 @@ import { onMounted } from 'vue';
 
 
 onMounted(() => {
-  document.body.className = 'font-josefin-sans'
+  document.body.className = 'font-josefin-sans mobile-wallpaper'
 })
 </script>
 
@@ -65,9 +65,12 @@ onMounted(() => {
               
               border-2
               border-solid
+              border-desaturated-red/50
               
               rounded-full
               
+              placeholder-desaturated-red/50
+              text-dark-grayish-red/75
             " 
             type="text" 
             placeholder="Email Address">
@@ -86,8 +89,10 @@ onMounted(() => {
 
             -right-0
             
-            bg-soft-red
-            rounded-full            
+            button-wallpaper
+            rounded-full   
+            shadow-xl
+            shadow-desaturated-red         
             ">
             <img src="./assets/icon-arrow.svg">
           </div>
@@ -98,4 +103,11 @@ onMounted(() => {
 </template>
 
 <style scoped>
+  .mobile-wallpaper {
+    background: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+  }
+  
+  .button-wallpaper {
+    background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+  }
 </style>
