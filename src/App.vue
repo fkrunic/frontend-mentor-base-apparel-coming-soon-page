@@ -1,22 +1,24 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
 import * as EmailValidator from 'email-validator'
-import { match } from 'ts-pattern'
 
 type EmailState
   = { kind: 'not-entered' }
   | { kind: 'valid' }
   | { kind: 'invalid' }
 
+const emailInput = ref('')
 const emailState = ref({ kind: 'not-entered'} as EmailState)
 
 const onInput = (event: Event): void => {
-  const input = (event.target as HTMLInputElement).value
-  if (EmailValidator.validate(input)) {
-    console.log('valid email')
+  const input = (event.target as HTMLInputElement).value 
+  emailInput.value = input
+}
+
+const onClick = (): void => {
+  if (EmailValidator.validate(emailInput.value)) {
     emailState.value = { kind: 'valid' }
   } else {
-    console.log('invalid email')
     emailState.value = { kind: 'invalid' }
   }
 }
@@ -115,7 +117,9 @@ onMounted(() => {
             shadow-desaturated-red
             
             hover:cursor-pointer
-            ">
+            "
+            @click="onClick"
+            >
             <img src="./assets/icon-arrow.svg">
           </div>
 
