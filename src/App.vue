@@ -92,7 +92,9 @@ onMounted(() => {
             button-wallpaper
             rounded-full   
             shadow-xl
-            shadow-desaturated-red         
+            shadow-desaturated-red
+            
+            hover:cursor-pointer
             ">
             <img src="./assets/icon-arrow.svg">
           </div>
@@ -109,5 +111,9 @@ onMounted(() => {
   
   .button-wallpaper {
     background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+  }
+
+  .button-wallpaper:hover {
+    background: linear-gradient(135deg, hsl(0, 80%, 94%), hsl(0, 74%, 80%));
   }
 </style>
