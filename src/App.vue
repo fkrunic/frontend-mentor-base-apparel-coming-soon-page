@@ -1,6 +1,25 @@
 <script setup lang="ts">
-import { onMounted } from 'vue';
+import { onMounted, ref } from 'vue';
+import * as EmailValidator from 'email-validator'
+import { match } from 'ts-pattern'
 
+type EmailState
+  = { kind: 'not-entered' }
+  | { kind: 'valid' }
+  | { kind: 'invalid' }
+
+const emailState = ref({ kind: 'not-entered'} as EmailState)
+
+const onInput = (event: Event): void => {
+  const input = (event.target as HTMLInputElement).value
+  if (EmailValidator.validate(input)) {
+    console.log('valid email')
+    emailState.value = { kind: 'valid' }
+  } else {
+    console.log('invalid email')
+    emailState.value = { kind: 'invalid' }
+  }
+}
 
 onMounted(() => {
   document.body.className = 'font-josefin-sans mobile-wallpaper'
@@ -64,16 +83,17 @@ onMounted(() => {
               outline-none
               
               border-2
-              border-solid
-              border-desaturated-red/50
-              
+              border-solid              
               rounded-full
               
               placeholder-desaturated-red/50
               text-dark-grayish-red/75
             " 
             type="text" 
-            placeholder="Email Address">
+            placeholder="Email Address"
+            :class="emailState.kind === 'invalid' ? 'border-soft-red' : 'border-desaturated-red/50'"
+            @input="onInput"
+            >
 
           <!-- Submit Icon -->
           <div class="
@@ -98,7 +118,15 @@ onMounted(() => {
             ">
             <img src="./assets/icon-arrow.svg">
           </div>
+
+          <img v-if="emailState.kind === 'invalid'" 
+            class="absolute top-3 right-20" 
+            src="./assets/icon-error.svg">
         </div>
+
+        <p v-if="emailState.kind === 'invalid'" class="text-soft-red pt-0.5 pl-4 text-xs">
+          Please enter a valid email address.
+        </p>
       </div>
     </div>
   </div>
